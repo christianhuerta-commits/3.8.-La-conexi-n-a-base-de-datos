@@ -2798,6 +2798,7 @@ GameObject:
   - component: {fileID: 2103856044}
   - component: {fileID: 2103856047}
   - component: {fileID: 2103856048}
+  - component: {fileID: 2103856049}
   m_Layer: 0
   m_Name: john_idle_0
   m_TagString: Untagged
@@ -2927,7 +2928,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &2103856048
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2965,6 +2966,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.21, y: 0.19}
   m_Direction: 0
+--- !u!114 &2103856049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103856043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b810b062f06dd44a7e34144c0fed2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JohnMovement
+  Speed: 1
+  JumpForce: 150
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
