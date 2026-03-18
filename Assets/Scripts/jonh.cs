@@ -8,6 +8,7 @@ public class JohnMovement : MonoBehaviour
     private float Horizontal;
 public float Speed;
 public float JumpForce;
+private bool Grounded;
     void Start()
     {
         // Corregido: 'GetComponent' (con 'n'), paréntesis angular '>' y paréntesis final '()'
@@ -18,7 +19,15 @@ public float JumpForce;
     {
        
         Horizontal = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.W))
+        Debug.DrawRay(transform.position,Vector3.down * 0.1f, Color.red);
+       
+       if(Physics2D.Raycast(transform.position,Vector3.down,0.1f))
+        {
+            Grounded=true;
+        } else 
+        Grounded=false;
+       
+        if (Input.GetKeyDown(KeyCode.W) && Grounded)
         {
             Jump();
         }
