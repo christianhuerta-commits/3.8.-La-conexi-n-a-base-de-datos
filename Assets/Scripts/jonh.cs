@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class JohnMovement : MonoBehaviour
 {
-    private Rigidbody2D Rigidbody2D;
-    private Animator Animator;
-    private float Horizontal;
-public GameObject BulletPrefab;
+    // --- Variables de Componentes ---
+    private Rigidbody2D Rigidbody2D;  
+     private Animator Animator;
+    private float Horizontal;// Controla las animaciones (correr, saltar, etc.)
+    public GameObject BulletPrefab;
 public float Speed;
 public float JumpForce;
 private bool Grounded;
@@ -15,16 +16,16 @@ private bool Grounded;
 private float LastShoot;
     void Start()
     {
-        // Corregido: 'GetComponent' (con 'n'), paréntesis angular '>' y paréntesis final '()'
+        // Se obtienen las referencias a los componentes al iniciar
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator=GetComponent<Animator>();
     }
 
     void Update()
     {
-       
+       // Obtiene la entrada del teclado (Izquierda/Derecha)
         Horizontal = Input.GetAxisRaw("Horizontal");
-
+// Voltea el sprite dependiendo de la dirección del movimiento
 if(Horizontal<0.0f) transform.localScale= new Vector3(-1.0f,1.0f,1.0f);
 else if (Horizontal>0.0f) transform.localScale=new Vector3(1.0f,1.0f,1.0f);
 
@@ -37,7 +38,7 @@ else if (Horizontal>0.0f) transform.localScale=new Vector3(1.0f,1.0f,1.0f);
             Grounded=true;
         } else 
         Grounded=false;
-       
+       // Salto: Si presiona W y está en el suelo
         if (Input.GetKeyDown(KeyCode.W) && Grounded)
         {
             Jump();
