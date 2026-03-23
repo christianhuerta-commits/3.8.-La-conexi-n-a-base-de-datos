@@ -25,11 +25,11 @@ private float LastShoot;
     {
        // Obtiene la entrada del teclado (Izquierda/Derecha)
         Horizontal = Input.GetAxisRaw("Horizontal");
-// Voltea el sprite dependiendo de la dirección del movimiento
+// Voltea el sprite dependiendo de la dirección del movimiento 3.6. El movimiento de una bala
 if(Horizontal<0.0f) transform.localScale= new Vector3(-1.0f,1.0f,1.0f);
 else if (Horizontal>0.0f) transform.localScale=new Vector3(1.0f,1.0f,1.0f);
 
-
+      // animacion de correr 3.6. El movimiento de una bala
         Animator.SetBool("running",Horizontal !=0.0f);
         Debug.DrawRay(transform.position,Vector3.down * 0.1f, Color.red);
        
