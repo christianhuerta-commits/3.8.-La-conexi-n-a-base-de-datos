@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "3.1. La escena principal y la estructura del personaje.slnx"
+    "dotnet.defaultSolution": "3.1. La escena principal y la estructura del personaje.slnx",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
